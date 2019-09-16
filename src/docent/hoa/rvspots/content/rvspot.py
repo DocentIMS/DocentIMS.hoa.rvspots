@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from plone import api
 from plone.dexterity.content import Item, Container
-from plone.directives import form
+from plone.supermodel import model
+from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobFile
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary
@@ -18,7 +19,7 @@ def spotCostVocabulary():
         terms.append(SimpleVocabulary.createTerm(str(i), str(i), u"$%s" % i))
     return SimpleVocabulary(terms)
 
-class IRVSpot(form.Schema):
+class IRVSpot(model.Schema):
     """
     Uses IDublinCore
     """

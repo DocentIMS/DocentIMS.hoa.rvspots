@@ -2,7 +2,8 @@
 """Module where all interfaces, events and exceptions live."""
 
 from docent.hoa.rvspots import _
-from plone.directives import form
+from plone.supermodel import model
+from plone.autoform import directives as form
 from zope import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
@@ -12,7 +13,7 @@ class IDocentHoaRvspotsLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-class IStoreVocabularyData(form.Schema):
+class IStoreVocabularyData(model.Schema):
 
     home_owners_tuples_json = schema.TextLine(
         title=_(u"Home Owners JSON"),

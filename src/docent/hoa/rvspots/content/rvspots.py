@@ -3,7 +3,8 @@ from plone import api
 from plone.app.textfield import RichText
 from plone.dexterity.content import Item, Container
 from plone.dexterity.utils import createContent
-from plone.directives import form
+from plone.supermodel import model
+from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage
 
 from docent.hoa.rvspots.app_config import RV_MANAGERS_GID
@@ -15,7 +16,7 @@ from docent.hoa.rvspots import _
 
 
 
-class IRVSpots(form.Schema):
+class IRVSpots(model.Schema):
     """
     Uses IDublinCore
     """
